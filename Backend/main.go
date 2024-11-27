@@ -14,8 +14,7 @@ func main() {
 		AllowedHeaders:   []string{"Authorization", "Content-Type"},
 		ExposedHeaders:   []string{"Authorization", "Content-Type"},
 		AllowCredentials: true,
-		MaxAge:           86400,
-	})
+		MaxAge:           86400})
 	handler := c.Handler(r)
 	r.HandleFunc("/getMessage", getMessage).Methods("POST")
 	err := http.ListenAndServe(":8080", handler)
